@@ -220,10 +220,12 @@
             padding: 0.6rem 1.2rem;
             border-radius: 50px;
             border: 1px solid var(--border);
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             font-weight: 500;
             margin-bottom: 2rem;
+            margin-top: 5rem;
             box-shadow: 0 8px 32px rgba(76, 99, 182, 0.1);
+            box-shadow: 0 35px 100px rgba(76, 99, 182, 0.2);
             animation: gentle-pulse 3s infinite;
         }
 
@@ -580,11 +582,11 @@
         }
 
         .achievements li::before {
-            content: '●';
+            content: '◆';
             position: absolute;
             left: 0;
             color: var(--meditation-blue);
-            font-size: 1.5rem;
+            font-size: 1rem;
             animation: gentle-glow 3s infinite ease-in-out;
         }
 
@@ -686,12 +688,13 @@
             font-weight: 600 !important;
             position: relative;
             overflow: hidden;
+            padding-right: 3rem;
         }
 
         .ninja-skill::before {
             content: '🥷';
             position: absolute;
-            right: 8px;
+            right: 15px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.2rem;
@@ -700,7 +703,7 @@
 
         .ninja-skill:hover {
             background: linear-gradient(135deg, #ff4757, #ff3742) !important;
-            transform: scale(1.1) translateY(-4px) !important;
+            transform: scale(1.05) translateY(-2px) !important;
             box-shadow: 0 12px 40px rgba(255, 71, 87, 0.4) !important;
             animation: ninja-glow 0.5s ease !important;
         }
@@ -922,12 +925,15 @@
             margin-top: auto;
         }
 
-        .project-links img{
+        .project-links img,
+        .load-more-container img{
             object-fit: cover;
             height: 1.2rem;
             width: 1.2rem;
             display: block
         }
+
+
 
         .project-link {
             display: inline-flex;
@@ -970,6 +976,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            text-decoration: none;
         }
 
         .load-more-btn:hover {
@@ -1269,8 +1276,8 @@
                     <div class="code-content">
                         <div class="code-line"><span class="string">$</span> npm run build-apps</div>
                         <div class="code-line"><span class="function">✓</span> Apps compiled!</div>
-                        <div class="code-line"><span class="string">$</span> git commit -m "zen"</div>
-                        <div class="code-line"><span class="function">✓</span> Inner peace deployed</div>
+                        <!-- <div class="code-line"><span class="string">$</span> git commit -m "zen"</div>
+                        <div class="code-line"><span class="function">✓</span> Inner peace deployed</div> -->
                     </div>
                 </div>
             </div>
@@ -1384,13 +1391,13 @@ enabling the team to focus on strategic development.</li>
                             <li>Responsive design optimized for all devices</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com/Avdheshg/CarWorld" class="project-link">
+                            <a href="https://github.com/Avdheshg/CarWorld" target="_blank" class="project-link">
                                 <span><img src="img/github.png" alt="Github"></span> GitHub
                             </a>
-                            <a href="https://carworld.onrender.com/" class="project-link">
+                            <a href="https://carworld.onrender.com/" target="_blank" class="project-link">
                                 <span>🚀</span> Live Demo
                             </a>
-                            <a href="https://www.youtube.com/watch?v=CeqtpXjIuFk&t=1s&ab_channel=AvdueshGautam" class="project-link">
+                            <a href="https://www.youtube.com/watch?v=CeqtpXjIuFk&t=1s&ab_channel=AvdueshGautam" target="_blank" class="project-link">
                                 <span><img src="img/youtube.png" alt="Youtube"></span> Demo
                             </a>
                         </div>
@@ -1412,7 +1419,7 @@ enabling the team to focus on strategic development.</li>
                             <li>Responsive design with modern UI components</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com/avduesh/stackoverflow-clone" class="project-link">
+                            <a href="https://github.com/avduesh/stackoverflow-clone" target="_blank" class="project-link">
                                 <span><img src="img/github.png" alt="Github"></span> GitHub
                             </a>
                             <!-- <a href="#" class="project-link">
@@ -1423,114 +1430,11 @@ enabling the team to focus on strategic development.</li>
                     
                 </div>
 
-                <!-- Hidden Projects (Load More) -->
-                <div class="projects-grid hidden-projects" id="hidden-projects">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">Task Management System</h3>
-                            <p class="project-tech">React • Redux • Node.js • Socket.io</p>
-                        </div>
-                        <div class="project-description">
-                            A collaborative task management platform with real-time updates, team collaboration features, and intuitive project tracking.
-                        </div>
-                        <ul class="project-features">
-                            <li>Real-time collaboration with Socket.io integration</li>
-                            <li>Drag-and-drop task management interface</li>
-                            <li>Team member assignment and progress tracking</li>
-                            <li>Deadline management with notification system</li>
-                            <li>Dashboard analytics and reporting</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <span>🔗</span> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <span>🚀</span> Demo
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">Weather Analytics Dashboard</h3>
-                            <p class="project-tech">Python • Flask • D3.js • OpenWeather API</p>
-                        </div>
-                        <div class="project-description">
-                            An interactive weather analytics platform that provides comprehensive weather insights with beautiful data visualizations.
-                        </div>
-                        <ul class="project-features">
-                            <li>Interactive weather maps with D3.js visualizations</li>
-                            <li>Historical weather data analysis and trends</li>
-                            <li>Location-based weather forecasting</li>
-                            <li>Custom alerts and notification system</li>
-                            <li>Mobile-responsive dashboard design</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <span>🔗</span> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <span>🚀</span> Demo
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">E-Learning Platform</h3>
-                            <p class="project-tech">Vue.js • Laravel • MySQL • WebRTC</p>
-                        </div>
-                        <div class="project-description">
-                            A comprehensive e-learning solution with video conferencing, course management, and progress tracking capabilities.
-                        </div>
-                        <ul class="project-features">
-                            <li>Live video streaming with WebRTC integration</li>
-                            <li>Course creation and management system</li>
-                            <li>Student progress tracking and analytics</li>
-                            <li>Interactive quizzes and assignments</li>
-                            <li>Payment integration for course purchases</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <span>🔗</span> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <span>🚀</span> Demo
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-title">Cryptocurrency Tracker</h3>
-                            <p class="project-tech">React Native • Redux • CoinGecko API</p>
-                        </div>
-                        <div class="project-description">
-                            A mobile cryptocurrency tracking app with portfolio management, price alerts, and comprehensive market analysis.
-                        </div>
-                        <ul class="project-features">
-                            <li>Real-time cryptocurrency price tracking</li>
-                            <li>Portfolio management with profit/loss calculation</li>
-                            <li>Price alerts and push notifications</li>
-                            <li>Market trends and technical analysis</li>
-                            <li>Cross-platform mobile compatibility</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <span>🔗</span> GitHub
-                            </a>
-                            <a href="#" class="project-link">
-                                <span>📱</span> App Store
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Load More Button -->
                 <div class="load-more-container">
-                    <button class="load-more-btn" id="load-more-btn" onclick="loadMoreProjects()">
-                        Load More Projects
-                    </button>
+                    <a href="https://github.com/Avdheshg" class="btn btn-secondary">
+                        More Projects <span><img src="img/github.png" alt="Github"></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1577,13 +1481,13 @@ enabling the team to focus on strategic development.</li>
                 <div class="contact-card">
                     <div class="contact-icon">💻</div>
                     <div class="contact-info">
-                        <a href="https://github.com/avduesh" class="contact-link">GitHub Profile</a>
+                        <a href="https://github.com/Avdheshg" class="contact-link">GitHub</a>
                     </div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">💼</div>
                     <div class="contact-info">
-                        <a href="https://linkedin.com/in/avduesh-gautam" class="contact-link">LinkedIn Profile</a>
+                        <a href="https://www.linkedin.com/in/avduesh-gautam/" class="contact-link">LinkedIn</a>
                     </div>
                 </div>
             </div>
