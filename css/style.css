@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
@@ -173,6 +174,123 @@ body {
     box-shadow: 0 8px 32px rgba(76, 99, 182, 0.1);
 }
 
+/*** Hamburger *** */
+.mobile-menu-toggle {
+    /* display: none; */
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Hamburger menu animation */
+.mobile-menu-toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-toggle::before,
+.mobile-menu-toggle::after,
+.mobile-menu-toggle {
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle::before {
+    content: '☰';
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active::before {
+    content: '✕';
+    transform: rotate(180deg);
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 2rem;
+}
+
+.mobile-nav .nav-link {
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav .nav-link:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateX(5px);
+}
+
+.mobile-nav .nav-link.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 99, 182, 0.3);
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 999;
+    padding: 1rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 2rem;
+}
+
+.mobile-nav .nav-link {
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
 /* Main Content Container */
 .main-content {
     position: fixed;
@@ -208,7 +326,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
-    height: 100%;
+    /* height: 100%; */
 }
 
 /* Hero Section Specific Styles */
@@ -217,7 +335,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    height: 100%;
+    /* height: 100%; */
     background:
         radial-gradient(ellipse at center top, rgba(76, 99, 182, 0.05) 0%, transparent 70%),
         radial-gradient(ellipse at 80% 20%, rgba(139, 124, 163, 0.03) 0%, transparent 60%);
@@ -393,6 +511,11 @@ body {
     color: var(--text-primary);
     border: 1px solid var(--border);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .btn-secondary:hover {
@@ -721,9 +844,9 @@ body {
 }
 
 /* @keyframes meditate-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-        } */
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+} */
 
 /* Skills Section */
 .skills-section {
@@ -1177,124 +1300,8 @@ body {
     text-shadow: 0 0 10px var(--glow);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 3rem;
-    }
-
-    .hero-visual {
-        order: -1;
-        height: 350px;
-    }
-
-    .main-window {
-        width: 320px;
-        height: 220px;
-        position: relative;
-        top: 20px;
-        right: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .secondary-window {
-        display: none;
-    }
-
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    /* .nav-menu {
-                display: none;
-            } */
-
-    .projects-grid,
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card,
-    .experience-card,
-    .education-card {
-        padding: 2rem;
-    }
-}
-
-/* RESPONSIVE */
 /* Mobile Navigation */
-.mobile-menu-toggle {
-    display: none;
-    background: var(--bg-glass);
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-    padding: 0.75rem;
-    border-radius: 8px;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    font-size: 1.2rem;
-}
-
-.mobile-nav {
-    display: none;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: var(--bg-glass);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    z-index: 999;
-    padding: 1rem 0;
-}
-
-.mobile-nav.active {
-    display: block;
-}
-
-.mobile-nav-menu {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0 2rem;
-}
-
-.mobile-nav .nav-link {
-    padding: 1rem;
-    border-radius: 12px;
-    text-align: center;
-}
-
-/* Responsive Breakpoints */
-/* Mobile Navigation */
-.mobile-menu-toggle {
+/* .mobile-menu-toggle {
     display: none;
     background: var(--bg-glass);
     border: 1px solid var(--border);
@@ -1340,4 +1347,4 @@ body {
     padding: 1rem;
     border-radius: 12px;
     text-align: center;
-}
+} */

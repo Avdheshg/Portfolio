@@ -72,10 +72,20 @@ function showSection(targetSectionId) {
 
     // Add active class to clicked nav link
     const activeLink = document.querySelector(`[data-section="${targetSectionId}"]`);
+    const navLinks = document.querySelectorAll('.mobile-nav .nav-link');
+    // console.log(activeLink);
     if (activeLink) {
         activeLink.classList.add('active');
+        Array.from(navLinks).forEach(el => {
+            if (el.textContent === activeLink.textContent)
+            {
+                el.classList.toggle('active');
+            }
+        });
     }
 }
+
+
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function () {
@@ -99,16 +109,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
+// *** Hamburger   ***
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const navLinks = document.querySelectorAll('.mobile-nav .nav-link');
+// console.log(Array.from(navLinks).forEach(el => {console.log(el.textContent)}));
+
+console.log(mobileNav, mobileNav, navLinks);
+
+// Toggle menu on click
+mobileToggle.addEventListener('click', () => {
+    console.log("mobile toggle")
+    mobileToggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+});
+
+// Close menu when a link is clicked (optional but recommended)
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+    });
+});
+
 const unmuteButton = document.getElementById('unmute-button');
 const audio = document.getElementById('hover-sound');
 
-unmuteButton.addEventListener('click', () => {
-    console.log("Playing...")
-    audio.muted = false;
-    audio.play().catch(error => {
-        console.error('Unmute and playback failed:', error);
-    });
-});
+// unmuteButton.addEventListener('click', () => {
+//     console.log("Playing...")
+//     audio.muted = false;
+//     audio.play().catch(error => {
+//         console.error('Unmute and playback failed:', error);
+//     });
+// });
 
 // Keyboard navigation (optional)
 document.addEventListener('keydown', function (e) {
@@ -122,3 +156,5 @@ document.addEventListener('keydown', function (e) {
         showSection(sections[currentIndex + 1]);
     }
 });
+
+
