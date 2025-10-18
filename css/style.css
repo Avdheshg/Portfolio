@@ -810,7 +810,6 @@ body {
 }
 
 /* Meditation Emphasis Highlighting */
-/* Meditation Emphasis Highlighting */
 .meditation-emphasis {
     position: relative;
     font-weight: 600;
@@ -1074,13 +1073,14 @@ body {
         justify-content: center;
     }
 }
-
+/* Projects Grid */
 /* Projects Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     gap: 3rem;
     margin-top: 2rem;
+    grid-auto-rows: 1fr; /* Make all grid items equal height */
 }
 
 .project-card {
@@ -1092,7 +1092,6 @@ body {
     transition: all 0.5s ease;
     position: relative;
     overflow: hidden;
-    min-height: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -1135,9 +1134,8 @@ body {
 
 .project-description {
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.7;
-    flex-grow: 1;
 }
 
 .project-features {
